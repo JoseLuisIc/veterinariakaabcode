@@ -9,7 +9,7 @@ $usuarioIngresado= $_POST["usuario"];
 $contrasenaIngresada = $_POST["contrasena"];
 
 //3. se busca el usuario y contrasena en bd
-$consulta = "SELECT * FROM persona WHERE nombreDeUsuario='$usuarioIngresado' AND contrasena='$contrasenaIngresada'";
+$consulta = "SELECT * FROM persona WHERE nombreDeUsuario='$usuarioIngresado' AND contrasena='$contrasenaIngresada' ";
 $ejecutaConsulta = mysqli_query($conexionABaseDatos, $consulta);
 
 //4. se obtiene el numero de filas resultantes de la consulta
@@ -18,16 +18,13 @@ $ejecutaConsulta = mysqli_query($conexionABaseDatos, $consulta);
 $existeCuenta = mysqli_num_rows($ejecutaConsulta); //nota: resultado solo puede ser 1 o 0 o sea se econtró o no
 
 
-//5. entonces: 
+//5. entonces:  //Muestra mensaje
 if($existeCuenta){
-    //Muestra mensaje
-    echo "LosDatosIngresadosSonCorrectos";
-    //
-    
+   echo "inicio de sesión exitoso";
 }
 //en caso contrario, si el resultado es 0 entonces: 
 else{
-    echo "usuario o contraseña incorrectos";
+    echo "usuario o contraseña incorrectos  ";
 } 
 
 
