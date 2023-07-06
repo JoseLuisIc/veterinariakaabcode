@@ -1,12 +1,3 @@
-<?php
-
-session_start();
-if(isset($_SESSION["username"])){
-    header("location:home.php");
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -59,7 +50,7 @@ if(isset($_SESSION["username"])){
         crossorigin="anonymous"></script>
     <!--Fin Bootstrap js -->
 
-    <script src="peticionesConAjax.js"></script>
+    <script src="ajax.js"></script>
 </body>
 
 </html>
