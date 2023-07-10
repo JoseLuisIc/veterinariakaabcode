@@ -1,8 +1,8 @@
 <?php
 
 session_start();
-if(isset($_SESSION["username"])){
-    header("location:home.php");
+if(isset($_SESSION['usuario'])){
+    header('location:home.php');
 }
 
 ?>
@@ -34,7 +34,7 @@ if(isset($_SESSION["username"])){
 
             <div class="form-group ">
                 <label for="usuario">Usuario</label>
-                <input type="text" id="usuario" class="form-control">
+                <input type="text" id="usuario" class="form-control" >
             </div>
 
             <div class="form-group  ">

@@ -1,4 +1,16 @@
 
+//personalizacion de inputs al seleccionarlos
+
+document.getElementById("usuario").addEventListener('focus', function(){
+    document.getElementById("usuario").style.border = "solid black";
+    document.getElementById("usuario").style.boxShadow = "none";
+});
+document.getElementById("contrasena").addEventListener('focus', function(){
+    document.getElementById("contrasena").style.border = "solid black";
+    document.getElementById("contrasena").style.boxShadow = "none";
+});
+//Fin personalizacion de inputs al seleccionarlos
+
 var datosDeFormulario = document.getElementById("formulario");
 datosDeFormulario.onsubmit = e => {
 
@@ -16,7 +28,7 @@ datosDeFormulario.onsubmit = e => {
                 //cache:false,
                 success: function (data) {
                     if (data == 1) {
-                        location.href="index.html";
+                        location.href="home.php";
                     }
                     else{
                         document.getElementById("usuario").style.border = "solid red";
@@ -31,8 +43,9 @@ datosDeFormulario.onsubmit = e => {
     }
     else {
         $('#RespuestaAjax').html("ingresa tu usuario y contraseña");
-        document.getElementById("usuario").style.border = "solid green";
-        document.getElementById("contrasena").style.border = "solid green";
+        document.getElementById("usuario").style.border = "solid red";
+        document.getElementById("contrasena").style.border = "solid red";
+        
 
     }
 }

@@ -2,7 +2,7 @@
  <head>
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
   <meta charset="utf-8">
-  <title>Webslesson Tutorial</title>
+  <title>Home</title>
   <script
   src="https://code.jquery.com/jquery-1.9.1.js"
   integrity="sha256-e9gNBsAcA0DBuRWbm0oZfbiCyhjLrI6bmqAl5o+ZjUA="
@@ -15,13 +15,14 @@
    <?php
    //home.php
    session_start();
-   if(!isset($_SESSION["username"]))
+   if(!isset($_SESSION['usuario']))
    {
     header("location: login.php");
    }
-   echo '<h1 align="center">'.$_SESSION["username"].' - Welcome to Home Page</h1>';
-   echo '<p align="center"><a href="logout.php">Logout</a></p>';
+   echo '<h1 align="center">'.'Bienvenido '.$_SESSION['usuario'].'!!</h1>';
+   echo '';
    ?>
+   <p align="center"><a href="cierraSesion.php">Cerrar sesión</a></p>
   </div>
  </body>
 </html>
