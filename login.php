@@ -28,7 +28,7 @@ if(isset($_SESSION['usuario'])){
 
 <body class="row vh-100  d-flex align-items-center justify-content-center bg-light" style="width: 100%; height: 100%; ">
 
-    <div class="container border rounded  bg-white" style="height: 390px; width: 400px;">
+    <div class="container border rounded  bg-white" style="height: 450px; width: 400px;">
         <h4 class="mt-5 text-center " id="encabezado">Inicia sesión</h4>
         <form class=" m-4 " id="formulario" method="post">
 
@@ -40,12 +40,16 @@ if(isset($_SESSION['usuario'])){
             <div class="form-group  ">
                 <label for="contrasena">Contraseña</label>
                 <input type="password" id="contrasena" class="form-control">
-                <div id="RespuestaAjax" class="text-danger m-0 float-left " style="width: 100%;"></div>
-
+                <div id="RespuestaAjax" class="text-danger m-0 float-left " style="width: 100%; font-size: 13px;"></div>
             </div>
-
-            <button id="cargar" class="btn btn-primary mt-3 float-right ">Acceder</button>
-
+            <div class="form-check m-2">
+                <label class="form-check-label"></label>
+                <input type="checkbox" class="form-check-input" value="" id="mostrarContrasenaLogin">Mostrar contraseña
+                </label>
+            </div>
+            ¿No tienes una cuenta? <a href="crearCuenta.php"> da click aquí</a>
+            <button id="cargar" class="btn btn-primary mt-4 float-right ">Acceder</button>
+            
         </form>
 
     </div>

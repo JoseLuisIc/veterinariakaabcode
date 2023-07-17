@@ -11,6 +11,20 @@ document.getElementById("contrasena").addEventListener('focus', function(){
 });
 //Fin personalizacion de inputs al seleccionarlos
 
+//cuando se de click en mostrar contrasena, entonces:
+$('#mostrarContrasenaLogin').click(function(){
+    var contrasena = document.getElementById("contrasena");
+    if(contrasena.type==="password" ){//si el tipo de input es password en los input de contrasena 
+        //cambiar el tipo a text de los input contraseña 
+        contrasena.type="text";
+        
+    }
+    else{//en caso contrario poner el tipo como password
+        contrasena.type="password";
+        
+    }
+});
+
 var datosDeFormulario = document.getElementById("formulario");
 datosDeFormulario.onsubmit = e => {
 
@@ -33,7 +47,7 @@ datosDeFormulario.onsubmit = e => {
                     else{
                         document.getElementById("usuario").style.border = "solid red";
                         document.getElementById("contrasena").style.border = "solid red";
-                        $('#RespuestaAjax').html("usuario o contraseña incorrectos");
+                        $('#RespuestaAjax').html("Usuario o contraseña incorrectos");
                     }
                 }
             }
@@ -42,7 +56,7 @@ datosDeFormulario.onsubmit = e => {
 
     }
     else {
-        $('#RespuestaAjax').html("ingresa tu usuario y contraseña");
+        $('#RespuestaAjax').html("Ingresa tu usuario y contraseña");
         document.getElementById("usuario").style.border = "solid red";
         document.getElementById("contrasena").style.border = "solid red";
         
