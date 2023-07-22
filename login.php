@@ -2,7 +2,7 @@
 
 session_start();
 if(isset($_SESSION['usuario'])){
-    header('location:home.php');
+    header('location:plantilla/index.php');
 }
 
 ?>
@@ -63,7 +63,7 @@ if(isset($_SESSION['usuario'])){
         crossorigin="anonymous"></script>
     <!--Fin Bootstrap js -->
 
-    <script src="peticionesConAjax.js"></script>
+    <script src="archivosLogin/peticionesConAjax.js"></script>
 </body>
 
 </html>

@@ -65,7 +65,7 @@ formularioCrearCuenta.onsubmit = e => {
                     //cache:false,
                     success: function (data) {
                         if (data == 1) {
-                            location.href="home.php";
+                            location.href="plantilla/index.php";
                         }
                         else{
                             document.getElementById("usuario").style.border = "solid red";

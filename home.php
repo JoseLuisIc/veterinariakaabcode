@@ -13,7 +13,6 @@
  <body>
   <div class="container">
    <?php
-   //home.php
    session_start();
    if(!isset($_SESSION['usuario']))
    {
