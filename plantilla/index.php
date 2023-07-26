@@ -158,8 +158,8 @@
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Registros <i class="fa fa-angle-down mt-1"></i></a>
                                 <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
-                                    <a href="cart.html" class="dropdown-item">Nuevo registro</a>
-                                    <a href="checkout.html" class="dropdown-item">ver registros</a>
+                                    <a href="registroMascota.php" class="dropdown-item">Registrar mascota</a>
+                                    <a href="checkout.html" class="dropdown-item">Ver registros</a>
                                     
                                 </div>
                             </div>
@@ -168,23 +168,20 @@
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">pagos <i class="fa fa-angle-down mt-1"></i></a>
                                 <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
                                     <a href="cart.html" class="dropdown-item">Nuevo pago</a>
-                                    <a href="checkout.html" class="dropdown-item">ver pagos</a>
-                                    <a href="./../cierraSesion.php" class="dropdown-item">Cerrar sesión</a>
+                                    <a href="checkout.html" class="dropdown-item">Ver pagos</a>
                                 </div>
                             </div>
 
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Cuenta <i class="fa fa-angle-down mt-1"></i></a>
+                                <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
+                                    <a href="cart.html" class="dropdown-item">Editar cuenta</a>
+                                    <a href="cierraSesion.php" class="dropdown-item">Cerrar sesión</a>
+                                </div>
+                            </div>
 
                         </div>
-                        <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
-                            <a href="" class="btn px-0">
-                                <i class="fas fa-heart text-primary"></i>
-                                <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
-                            </a>
-                            <a href="" class="btn px-0 ml-3">
-                                <i class="fas fa-shopping-cart text-primary"></i>
-                                <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
-                            </a>
-                        </div>
+                        
                     </div>
                 </nav>
             </div>

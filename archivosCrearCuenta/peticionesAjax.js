@@ -38,6 +38,8 @@ $('#mostrarContrasena').click(function(){
         confirmarContrasena.type="password";
     }
 });
+//fin cuenta se da clic en mostrar contraseña
+
 
 var formularioCrearCuenta = document.getElementById("formularioCrearCuenta");
 formularioCrearCuenta.onsubmit = e => {
