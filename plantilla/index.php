@@ -189,6 +189,35 @@
     </div>
     <!-- Navbar End -->
 
+    <!-- Mascotas Start -->
+    <div class="container-fluid pt-5">
+        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Últimas Mascotas agregadas</span></h2>
+        <div class="row px-xl-5 pb-3">
+
+            <?php
+            $conexion = mysqli_connect("localhost", "root", "", "bdveterinaria");
+            $consulta = "SELECT nombre, especie FROM mascota ORDER BY idMascota DESC";
+            $ejecutaConsulta = mysqli_query($conexion, $consulta);
+            while($registro = mysqli_fetch_array($ejecutaConsulta)):
+            ?>
+            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                <a class="text-decoration-none" href="">
+                    <div class="cat-item d-flex align-items-center mb-4">
+                        <div class="overflow-hidden" style="width: 100px; height: 100px;">
+                            <img class="img-fluid" src="img/mascotas.jpg" alt="">
+                        </div>
+                        <div class="flex-fill pl-3">
+                            <h6><?= $registro['nombre'] ?></h6>
+                            <small class="text-body"><?= $registro['especie'] ?></small>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <?php endwhile ?>
+            
+        </div>
+    </div>
+    <!-- Mascotas End -->
 
     <!-- Carousel Start -->
     <div class="container-fluid mb-3">
@@ -289,35 +318,7 @@
     <!-- Featured End -->
 
 
-    <!-- Mascotas Start -->
-    <div class="container-fluid pt-5">
-        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Últimas Mascotas agregadas</span></h2>
-        <div class="row px-xl-5 pb-3">
-
-            <?php
-            $conexion = mysqli_connect("localhost", "root", "", "bdveterinaria");
-            $consulta = "SELECT nombre, especie FROM mascota ORDER BY idMascota DESC";
-            $ejecutaConsulta = mysqli_query($conexion, $consulta);
-            while($registro = mysqli_fetch_array($ejecutaConsulta)):
-            ?>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <a class="text-decoration-none" href="">
-                    <div class="cat-item d-flex align-items-center mb-4">
-                        <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                            <img class="img-fluid" src="img/mascotas.jpg" alt="">
-                        </div>
-                        <div class="flex-fill pl-3">
-                            <h6><?= $registro['nombre'] ?></h6>
-                            <small class="text-body"><?= $registro['especie'] ?></small>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <?php endwhile ?>
-            
-        </div>
-    </div>
-    <!-- Mascotas End -->
+    
 
 
     <!-- Products Start -->
