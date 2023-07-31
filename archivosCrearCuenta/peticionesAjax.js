@@ -91,3 +91,8 @@ formularioCrearCuenta.onsubmit = e => {
 
     }
 }
+
+$('#regresar').click(function(e){ 
+    e.preventDefault();
+    location.href="login.php";
+});

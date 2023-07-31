@@ -56,9 +56,9 @@ if(isset($_SESSION['usuario'])){
                 </label>
             </div>
             
-            <a href="login.php">Regresar</a>
-            <button id="crearCuenta" class="btn btn-primary mt-3 float-right ">Crear cuenta</button>
             
+            <button id="crearCuenta" class="btn btn-primary mt-3 float-right ">Crear cuenta</button>
+            <button id="regresar" class="btn btn-white border border-success m-3 float-right ">Regresar</button>
         </form>
         
     </div>

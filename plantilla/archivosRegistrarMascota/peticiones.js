@@ -19,7 +19,7 @@ formulario.onsubmit = e => {
 
     $.ajax(
         {
-            url: 'peticionesDeIndex/insertarMascotaEnBD.php',
+            url: 'archivosRegistrarMascota/insertarMascotaEnBD.php',
             type: 'POST',
             //datatype : "text",
             data: { nombreMascota: nombreMascota, 

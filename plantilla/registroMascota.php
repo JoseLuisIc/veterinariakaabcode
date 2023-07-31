@@ -1,10 +1,10 @@
 <?php
-/*
+
 session_start();
 if(!isset($_SESSION['usuario'])){
     header('location: ./../login.php');
 }
-*/
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -118,7 +118,7 @@ if(!isset($_SESSION['usuario'])){
         crossorigin="anonymous"></script>
     <!--Fin Bootstrap js -->
 
-    <script src="peticionesDeIndex/peticiones.js"></script>
+    <script src="archivosRegistrarMascota/peticiones.js"></script>
 </body>
 
 </html>
