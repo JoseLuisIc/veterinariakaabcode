@@ -158,6 +158,7 @@
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Registros <i class="fa fa-angle-down mt-1"></i></a>
                                 <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
+                                    <a href="registrarCliente.php" class="dropdown-item">Registrar cliente</a>
                                     <a href="registroMascota.php" class="dropdown-item">Registrar mascota</a>
                                     <a href="verMascotas.php" class="dropdown-item">Ver registros</a>
                                     
@@ -191,12 +192,12 @@
 
     <!-- Mascotas Start -->
     <div class="container-fluid pt-5">
-        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Últimas Mascotas agregadas</span></h2>
+        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Últimas mascotas agregadas</span></h2>
         <div class="row px-xl-5 pb-3">
 
             <?php
             $conexion = mysqli_connect("localhost", "root", "", "bdveterinaria");
-            $consulta = "SELECT nombre, especie FROM mascota ORDER BY idMascota DESC";
+            $consulta = "SELECT nombre, especie FROM mascota ORDER BY idMascota DESC LIMIT 8";
             $ejecutaConsulta = mysqli_query($conexion, $consulta);
             while($registro = mysqli_fetch_array($ejecutaConsulta)):
             ?>

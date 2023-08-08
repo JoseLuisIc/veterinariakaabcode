@@ -25,9 +25,9 @@ if(isset($_SESSION['usuario'])){
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 </head>
 
-<body class="row vh-100  d-flex align-items-center justify-content-center bg-light" style="width: 100%; height: 100%; ">
+<body class="bg-light" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;  min-height: 100vh;">
 
-    <div class="container border rounded  bg-white" style="height: 570px; width: 400px;">
+    <div class="container border rounded  bg-white" style="height: 570px; width: 420px;">
 
         <h4 class="mt-5 text-center " id="encabezado">Crear cuenta</h4>
         <p class="text-center " id="encabezadoDos">Introduce los datos solicitados</p>

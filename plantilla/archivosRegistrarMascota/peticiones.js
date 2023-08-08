@@ -14,6 +14,7 @@ formulario.onsubmit = e => {
     var vacunas = $('#vacunas').val();
     var alergias = $('#alergias').val();
     var cirugias = $('#cirugias').val();
+    var idCliente = $('#seleccionarCliente').val();
 
     
 
@@ -22,7 +23,8 @@ formulario.onsubmit = e => {
             url: 'archivosRegistrarMascota/insertarMascotaEnBD.php',
             type: 'POST',
             //datatype : "text",
-            data: { nombreMascota: nombreMascota, 
+            data: { idCliente: idCliente,
+                    nombreMascota: nombreMascota, 
                     raza : raza, 
                     edad: edad,
                     especie: especie,

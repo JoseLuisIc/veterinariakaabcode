@@ -30,7 +30,7 @@ if(!isset($_SESSION['usuario'])){
     <!-- Mascotas Start -->
     <div class="container-fluid pt-5">
         <div class="row "> 
-            <div class="col-2"><button id="regresar" class="btn btn-white border border-success ">Regresar</button></div>
+            <div class="col-2"><button id="regresar" class="btn btn-primary ">Regresar</button></div>
             <h2 class="text-center mb-4 col"><span class="bg-secondary text-center">Mascotas registradas</span></h2>
             <div class="col-2"></div>
         </div>

@@ -1,6 +1,6 @@
 <?php
 
-$cliente = 1;
+$idCliente = $_POST["idCliente"];
 $nombreMascota = $_POST["nombreMascota"];
 $raza = $_POST["raza"];
 $edad = $_POST["edad"];
@@ -19,7 +19,7 @@ if(isset($nombreMascota) && isset($raza) && isset($edad) && isset($especie)
 ){
 
     $conexion = mysqli_connect("localhost", "root", "", "bdveterinaria");
-    $sql = "INSERT INTO mascota (idCliente, nombre, raza, edad, especie, color, sexo, diagnósticos, tratamientos, vacunas, alergias, cirugias) VALUES ('$cliente','$nombreMascota', '$raza', '$edad', '$especie', '$color', '$sexo', '$diagnosticos', '$tratamientos', '$vacunas', '$alergias', '$cirugias')";
+    $sql = "INSERT INTO mascota (idCliente, nombre, raza, edad, especie, color, sexo, diagnósticos, tratamientos, vacunas, alergias, cirugias) VALUES ('$idCliente','$nombreMascota', '$raza', '$edad', '$especie', '$color', '$sexo', '$diagnosticos', '$tratamientos', '$vacunas', '$alergias', '$cirugias')";
     $ejecutarInsertar = mysqli_query($conexion, $sql);
     
     echo 1;

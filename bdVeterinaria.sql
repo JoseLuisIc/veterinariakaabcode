@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3307
--- Tiempo de generación: 18-07-2023 a las 19:40:44
+-- Tiempo de generación: 08-08-2023 a las 18:07:44
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 8.0.1
 
@@ -42,8 +42,26 @@ CREATE TABLE `citas` (
 
 CREATE TABLE `cliente` (
   `idCliente` int(11) NOT NULL,
-  `nombreDeUsuario2` varchar(30) NOT NULL
+  `idPersona` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `cliente`
+--
+
+INSERT INTO `cliente` (`idCliente`, `idPersona`) VALUES
+(1, 3),
+(2, 5),
+(3, 7),
+(4, 12),
+(5, 13),
+(6, 14),
+(7, 15),
+(8, 16),
+(9, 17),
+(10, 18),
+(11, 19),
+(12, 20);
 
 -- --------------------------------------------------------
 
@@ -55,12 +73,42 @@ CREATE TABLE `mascota` (
   `idMascota` int(11) NOT NULL,
   `idCliente` int(11) NOT NULL,
   `nombre` varchar(50) NOT NULL,
+  `raza` varchar(50) NOT NULL,
+  `edad` int(10) NOT NULL,
+  `especie` varchar(50) NOT NULL,
+  `color` varchar(50) NOT NULL,
+  `sexo` varchar(10) NOT NULL,
   `diagnósticos` varchar(500) NOT NULL,
   `tratamientos` varchar(500) NOT NULL,
   `vacunas` varchar(500) NOT NULL,
   `alergias` varchar(500) NOT NULL,
   `cirugias` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `mascota`
+--
+
+INSERT INTO `mascota` (`idMascota`, `idCliente`, `nombre`, `raza`, `edad`, `especie`, `color`, `sexo`, `diagnósticos`, `tratamientos`, `vacunas`, `alergias`, `cirugias`) VALUES
+(32, 1, 'Firulais2', '', 20, 'gato', '', 'Hembra', 'sdfs', 'lej jsdirsj sjfls', '', '', ''),
+(33, 1, 'ElBrayan', 'sfds', 50, 'nutria', '', 'Macho', 'jhk jgjg jghj 4', '1. khjk hjgj', '', '', ''),
+(34, 1, 'FirulaisV', 'desconocida', 5, 'perro', 'negro', 'Macho', 'esta enfermo', 'darle vitaminas cada 12 horas', 'sin vacunas', 'ninguna', 'no'),
+(35, 1, 'dss', '', 1, 'leopardo', 'azul', 'Hembra', 'df', 'df', '', '', '23'),
+(36, 1, 'pinto', 'malish', 20, 'gato', 'cafe', 'Hembra', 'pendiente', 'que tome agua', 'a', 'b', 'c'),
+(37, 1, 'dingo', 'xd', 3, 'loro', '', 'Macho', 'asqw', 'sew', 'vbn', 'zxc', 'mnb'),
+(38, 1, 'samurai', 'v', 5, 'perro', '', 'Macho', 'pendiente', 'pendiente', '', '', ''),
+(39, 2, 'xd', '', 3, 'jirafa', '', 'Macho', 'no', 'si', '', '', ''),
+(40, 1, 'xd2', 'a', 4, 'c', 'd', 'Hembra', 'f', 'g', '', '', ''),
+(41, 1, 'dfds', 'dfs', 2, 'sdf', 'df', 'Macho', 'fd', 'd', '', '', ''),
+(42, 1, 'Max', 'df', 4, 'b', '', 'Macho', 'f', 'f', '', '', ''),
+(43, 1, 'abcdef', '', 1, 'd', 'd', 'Hembra', 'd', 'd', 'd', '', ''),
+(44, 2, 'ds', 'd', 4, 'j', 'j', 'Macho', 'j', 'j', 'jj', '', ''),
+(45, 3, 'xdxd', 'vvvvvv', 4, 'j', 'j', 'Macho', 'j', 'j', 'jj', '', ''),
+(46, 1, 'a', 'b', 5, 'f', 'd', 'Hembra', 'd', 'f', 'f', '', ''),
+(47, 3, 'f', 'df', 1, 'df', '', 'Macho', 'fd', 'fd', 'fd', 'a', 'b'),
+(48, 4, 'pedigre', '', 2, 'v', 'gris', 'Macho', 'none', 'none', 'f', 'v', 'df'),
+(49, 6, 'firulaisvi', '', 1, 'gato', '', 'Hembra', '212', '334', '', '', ''),
+(50, 9, 'gtx', '', 5, 'bbbbnnnnn', '', 'Macho', 'ghre', 's', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -82,32 +130,42 @@ CREATE TABLE `pagos` (
 --
 
 CREATE TABLE `persona` (
-  `nombreDeUsuario` varchar(30) NOT NULL,
+  `idPersona` int(11) NOT NULL,
+  `nombreDeUsuario` varchar(40) NOT NULL,
   `contrasena` varchar(50) NOT NULL,
   `nombres` varchar(50) NOT NULL,
-  `primer apellido` varchar(30) NOT NULL,
-  `segundo apellido` varchar(30) NOT NULL,
-  `telefono` int(10) NOT NULL,
-  `correo electronico` varchar(100) NOT NULL,
-  `Redes sociales` varchar(100) NOT NULL
+  `primerApellido` varchar(30) NOT NULL,
+  `segundoApellido` varchar(30) NOT NULL,
+  `telefono` varchar(10) NOT NULL,
+  `correoElectronico` varchar(100) NOT NULL,
+  `redesSociales` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `persona`
 --
 
-INSERT INTO `persona` (`nombreDeUsuario`, `contrasena`, `nombres`, `primer apellido`, `segundo apellido`, `telefono`, `correo electronico`, `Redes sociales`) VALUES
-('destructor', 'cOntrasena1&', '', '', '', 0, '', ''),
-('hernesto132', '123xola', '', '', '', 0, '', ''),
-('hernesto132a', 'abc$AB122', '', '', '', 0, '', ''),
-('hernesto232', '123hola', '', '', '', 0, '', ''),
-('Jose', '123', 'Jose', 'perez', 'lopez', 789123763, 'ninguno', 'facebook'),
-('JoseLopez', '123', 'Jose martin', 'Lopez', 'Macdonals', 12345678, 'ninguno', 'ninguno'),
-('R1ch4rd', 'abc$AB122', '', '', '', 0, '', ''),
-('Richard', 'abc123', 'Richard A', 'Mejia', 'Ku', 123456789, 'richard@hotmail.com', 'ninguna'),
-('Richard23', 'xd12', '', '', '', 0, '', ''),
-('Richard5', 'abc$AB122', '', '', '', 0, '', ''),
-('Richardv', 'czxczzcxR3#', '', '', '', 0, '', '');
+INSERT INTO `persona` (`idPersona`, `nombreDeUsuario`, `contrasena`, `nombres`, `primerApellido`, `segundoApellido`, `telefono`, `correoElectronico`, `redesSociales`) VALUES
+(1, '', '123xola', 'hernesto', '', '', '0', '', ''),
+(2, '', 'abc$AB122', 'Maria', '', '', '0', '', ''),
+(3, '', '123', 'Jose', 'perez', 'lopez', '789123763', 'ninguno', 'facebook'),
+(4, '', '123', 'Jose martin', 'Lopez', 'Macdonals', '12345678', 'ninguno', 'ninguno'),
+(5, '', 'Adsf2%sdR', 'Manuel Perez', 'martin ', 'chi', '0', '', ''),
+(6, 'Richard', 'abc123', 'Richard A', 'Mejia', 'Ku', '123456789', 'richard@hotmail.com', 'ninguna'),
+(7, '', '123abcA#', 'juan', 'Rodriges', 'pech', '0', '', ''),
+(8, '', '', 'xd', 'xdxd', 'x', '0', '', ''),
+(9, '', '', 'xd dos', 'xdxddos', 'xd', '786', '', ''),
+(10, '', '', 'xdtre', 'x', 'xd', '0', '', ''),
+(11, '', '', 'v', 'vd', 'vdt', '0', '', ''),
+(12, '', '', 'jose', 'jo', 'se', '34567', '', ''),
+(13, '', '', 'Richard', 'alexis', 'mejia', '123456789', 'richard@gmail.com', ''),
+(14, '', '', 'Gaspar', 'marcelo', 'leon', '2147483647', '', ''),
+(15, '', '', 'Cliente Siete', 'alias', 'seven', '2147483647', '', ''),
+(16, '', '', 'sd', 'fsd', 'df', '123', '', ''),
+(17, '', '', 's', 'd', 'd', '123456789', '', ''),
+(18, '', '', 'dsf', 'df', 'df', '9899999999', 'xd@g.co', ''),
+(19, '', '', 'Mario Martines', 'Bros', 'Dos', '987123465', '', ''),
+(20, '', '', '  ', 'd', 'dfd', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -161,7 +219,7 @@ ALTER TABLE `citas`
 --
 ALTER TABLE `cliente`
   ADD PRIMARY KEY (`idCliente`),
-  ADD KEY `nombreDeUsuario` (`nombreDeUsuario2`);
+  ADD KEY `idPersona` (`idPersona`);
 
 --
 -- Indices de la tabla `mascota`
@@ -181,7 +239,7 @@ ALTER TABLE `pagos`
 -- Indices de la tabla `persona`
 --
 ALTER TABLE `persona`
-  ADD PRIMARY KEY (`nombreDeUsuario`);
+  ADD PRIMARY KEY (`idPersona`);
 
 --
 -- Indices de la tabla `registro`
@@ -202,8 +260,7 @@ ALTER TABLE `veterinario`
 --
 ALTER TABLE `veterinariocliente`
   ADD PRIMARY KEY (`idVeterinarioCliente`),
-  ADD KEY `FK_Veterinario` (`idVeterinario`),
-  ADD KEY `FK_Cliente` (`idCliente`);
+  ADD KEY `FK_Veterinario` (`idVeterinario`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -219,19 +276,25 @@ ALTER TABLE `citas`
 -- AUTO_INCREMENT de la tabla `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `idCliente` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idCliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `mascota`
 --
 ALTER TABLE `mascota`
-  MODIFY `idMascota` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idMascota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT de la tabla `pagos`
 --
 ALTER TABLE `pagos`
   MODIFY `numero de pago` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `persona`
+--
+ALTER TABLE `persona`
+  MODIFY `idPersona` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de la tabla `registro`
@@ -265,7 +328,7 @@ ALTER TABLE `citas`
 -- Filtros para la tabla `cliente`
 --
 ALTER TABLE `cliente`
-  ADD CONSTRAINT `nombreDeUsuario2` FOREIGN KEY (`nombreDeUsuario2`) REFERENCES `persona` (`nombreDeUsuario`);
+  ADD CONSTRAINT `idPersona` FOREIGN KEY (`idPersona`) REFERENCES `persona` (`idPersona`);
 
 --
 -- Filtros para la tabla `mascota`
@@ -286,17 +349,10 @@ ALTER TABLE `registro`
   ADD CONSTRAINT `idVeterinarioCliente` FOREIGN KEY (`idVeterinarioCliente`) REFERENCES `veterinariocliente` (`idVeterinarioCliente`);
 
 --
--- Filtros para la tabla `veterinario`
---
-ALTER TABLE `veterinario`
-  ADD CONSTRAINT `nombreDeUsuario` FOREIGN KEY (`nombreDeUsuario`) REFERENCES `persona` (`nombreDeUsuario`);
-
---
 -- Filtros para la tabla `veterinariocliente`
 --
 ALTER TABLE `veterinariocliente`
-  ADD CONSTRAINT `veterinariocliente_ibfk_1` FOREIGN KEY (`idVeterinario`) REFERENCES `veterinario` (`idVeterinario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `veterinariocliente_ibfk_2` FOREIGN KEY (`idCliente`) REFERENCES `cliente` (`idCliente`);
+  ADD CONSTRAINT `veterinariocliente_ibfk_1` FOREIGN KEY (`idVeterinario`) REFERENCES `veterinario` (`idVeterinario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

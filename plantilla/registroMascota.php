@@ -28,7 +28,7 @@ if(!isset($_SESSION['usuario'])){
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
-<body class="bg-light" style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; background-image: url('fondo.jpg'); ">
+<body class="bg-light" style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; background-image: url('fondoMascotas.jpg'); ">
 
     <div class="container border rounded  bg-white" style="height: 820px; width: 750px;">
 
@@ -36,14 +36,32 @@ if(!isset($_SESSION['usuario'])){
         <p class="text-center " id="encabezadoDos">Introduce los datos de la mascota</p>
         <form class="row m-3 " id="formularioRegistrarMascota" method="post">
 
+            <div class="col-6 form-group">
+
+                <label for="seleccionarCliente">Seleccionar cliente</label>
+                <select class="form-control" id="seleccionarCliente">
+                    <?php
+                    $conexion = mysqli_connect("localhost", "root", "", "bdveterinaria");
+                    $consulta = "SELECT idCliente, nombres, primerApellido, segundoApellido FROM persona INNER JOIN cliente ON persona.idPersona = cliente.idPersona ORDER BY idCliente DESC";
+                    $ejecutaConsulta = mysqli_query($conexion, $consulta);
+                    while($registro = mysqli_fetch_array($ejecutaConsulta)):
+                    ?>
+                        <option value="<?= $registro['idCliente'] ?>"><?= $registro['nombres'] . " " . $registro['primerApellido'] . " " . $registro['segundoApellido'] ?></option>
+                    
+                    <?php endwhile ?>
+                
+                </select>
+
+            </div>
+
             <div class="col-6 form-group ">
                 <label for="nombreMascota">Nombre*</label>
-                <input type="text"  id="nombreMascota" class="form-control" pattern="^[A-Za-z0-9]+$" title = "El nombre de la mascota solo puede tener letras y números" required="">
+                <input type="text"  id="nombreMascota" class="form-control" pattern="^[A-Za-z0-9 ]+$" title = "El nombre de la mascota solo puede tener letras y números" required="">
             </div>
 
             <div class="col-6 form-group ">
                 <label for="raza">Raza</label>
-                <input type="text" id="raza" class="form-control" pattern="^[A-Za-z0-9]+$" title = "La raza solo puede tener letras y números">
+                <input type="text" id="raza" class="form-control" pattern="^[A-Za-z0-9 ]+$" title = "La raza solo puede tener letras y números">
             </div>
 
             <div class="col-6 form-group ">
@@ -58,7 +76,7 @@ if(!isset($_SESSION['usuario'])){
 
             <div class="col-6 form-group ">
                 <label for="color">Color</label>
-                <input type="text" id="color" class="form-control" pattern="^[A-Za-z]+$" title = "solo puede tener letras">
+                <input type="text" id="color" class="form-control" pattern="^[A-Za-z ]+$" title = "solo puede tener letras">
             </div>
             
             <div class="col-6">
