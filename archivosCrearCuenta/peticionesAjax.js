@@ -1,5 +1,35 @@
 //personalizacion de inputs al seleccionarlos
 
+document.getElementById("nombres").addEventListener('focus', function(){
+    document.getElementById("nombres").style.border = "solid black";
+    document.getElementById("nombres").style.boxShadow = "none";
+});
+
+document.getElementById("primerApellido").addEventListener('focus', function(){
+    document.getElementById("primerApellido").style.border = "solid black";
+    document.getElementById("primerApellido").style.boxShadow = "none";
+});
+
+document.getElementById("segundoApellido").addEventListener('focus', function(){
+    document.getElementById("segundoApellido").style.border = "solid black";
+    document.getElementById("segundoApellido").style.boxShadow = "none";
+});
+
+document.getElementById("telefono").addEventListener('focus', function(){
+    document.getElementById("telefono").style.border = "solid black";
+    document.getElementById("telefono").style.boxShadow = "none";
+});
+
+document.getElementById("correo").addEventListener('focus', function(){
+    document.getElementById("correo").style.border = "solid black";
+    document.getElementById("correo").style.boxShadow = "none";
+});
+
+document.getElementById("confirmarContrasena").addEventListener('focus', function(){
+    document.getElementById("confirmarContrasena").style.border = "solid black";
+    document.getElementById("confirmarContrasena").style.boxShadow = "none";
+});
+
 document.getElementById("usuario").addEventListener('focus', function(){
     document.getElementById("usuario").style.border = "solid black";
     document.getElementById("usuario").style.boxShadow = "none";
@@ -13,6 +43,8 @@ document.getElementById("confirmarContrasena").addEventListener('focus', functio
     document.getElementById("confirmarContrasena").style.border = "solid black";
     document.getElementById("confirmarContrasena").style.boxShadow = "none";
 });
+
+
 //Fin personalizacion de inputs al seleccionarlos
 
 /*
@@ -38,20 +70,23 @@ $('#mostrarContrasena').click(function(){
         confirmarContrasena.type="password";
     }
 });
-//fin cuenta se da clic en mostrar contraseña
+//fin de cuando se da clic en mostrar contraseña
 
 
 var formularioCrearCuenta = document.getElementById("formularioCrearCuenta");
 formularioCrearCuenta.onsubmit = e => {
     e.preventDefault();
 
+
     var usuario = $('#usuario').val();
     var contrasena = $('#contrasena').val();
     var contrasenaDos = $('#confirmarContrasena').val();
+    var nombres = $('#nombres').val();
+    var primerApellido = $('#primerApellido').val();
+    var segundoApellido = $('#segundoApellido').val();
+    var telefono = $('#telefono').val();
+    var correo = $('#correo').val();
     
-
-    if ($.trim(usuario).length > 0 && $.trim(contrasena).length > 0 && $.trim(contrasenaDos).length > 0) {
-
        if(contrasena != contrasenaDos){
             $('#respuesta').html("las contraseñas no coinciden");
             document.getElementById("confirmarContrasena").style.border = "solid red";
@@ -63,8 +98,14 @@ formularioCrearCuenta.onsubmit = e => {
                 {
                     url: 'archivosCrearCuenta/validacionInsertarCuenta.php',
                     type: 'POST',
-                    data: { usuario: usuario, contrasena: contrasena },
-                    //cache:false,
+                    data: { usuario: usuario, 
+                            contrasena: contrasena,
+                            nombres: nombres,
+                            primerApellido: primerApellido,
+                            segundoApellido: segundoApellido,
+                            telefono: telefono,
+                            correo: correo 
+                          },
                     success: function (data) {
                         if (data == 1) {
                             location.href="plantilla/index.php";
@@ -79,17 +120,7 @@ formularioCrearCuenta.onsubmit = e => {
             );
        }
 
-    }
-    else {
-        $('#respuesta').html("todos los campos son requeridos");
-        if ($.trim(usuario).length == 0)//si no se ingreso nada en input usuario entonces
-        document.getElementById("usuario").style.border = "solid red";//cambiar el borde a rojo del input usuario
-        if ($.trim(contrasena).length == 0)
-        document.getElementById("contrasena").style.border = "solid red";
-        if ($.trim(contrasenaDos).length == 0)
-        document.getElementById("confirmarContrasena").style.border = "solid red";
-
-    }
+    
 }
 
 $('#regresar').click(function(e){ 

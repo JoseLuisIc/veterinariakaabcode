@@ -14,7 +14,7 @@
         $conexionABaseDatos = mysqli_connect("localhost", "root", "", "bdveterinaria");
 
         //3. se busca el usuario y contrasena en bd
-        $consulta = "SELECT * FROM persona WHERE nombreDeUsuario='$username' AND contrasena='$password' ";
+        $consulta = "SELECT * FROM persona INNER JOIN veterinario ON persona.idPersona = veterinario.idPersona2 WHERE nombreDeUsuario='$username' AND contrasena='$password' ";
         $ejecutaConsulta = mysqli_query($conexionABaseDatos, $consulta);
 
         //4. se obtiene el numero de filas resultantes de la consulta

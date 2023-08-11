@@ -26,7 +26,7 @@ if(isset($_SESSION['usuario'])){
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 </head>
 
-<body class="padre bg-light" style="display: flex; align-items: center; justify-content: center;  min-height: 100vh;">
+<body class="padre bg-light" style="display: flex; align-items: center; justify-content: center;  min-height: 100vh; background-image: url('fondoRegistrarVeterinario.jpg');">
     
     <div class="container border rounded  bg-white" style="height: 450px; width: 400px;">
         <h4 class="mt-5 text-center " id="encabezado">Iniciar sesión</h4>
