@@ -77,7 +77,7 @@ if(isset($_SESSION['usuario'])){
             </div>
             
             <div class="col-12" id="notaContrasena" class=" m-0  mb-2 " style="width: 100%; font-size: 13px;">
-            *La contraseña debe tener un mínimo de 8 caracteres, al menos una letra mayúscula, un número y un carácter especial
+            *La contraseña debe tener un mínimo de 16 caracteres, al menos una letra mayúscula, un número y un carácter especial
             </div>
             
             <div class="col-12 m-3 form-check">

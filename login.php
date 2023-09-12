@@ -44,7 +44,7 @@ if(isset($_SESSION['usuario'])){
             </div>
             <div class="form-check m-2">
                 <label class="form-check-label"></label>
-                <input type="checkbox" class="form-check-input" value="" id="mostrarContrasenaLogin">Mostrar contraseña
+                <input type="checkbox" class="form-check-input" value="" id="mostrarContrasenaLogin">Mostrar o Ver contraseña
                 </label>
             </div>
             ¿No tienes una cuenta? <a href="crearCuenta.php"> da click aquí</a>
